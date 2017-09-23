@@ -6,5 +6,5 @@ camera = PiCamera()
 camera.start_preview(alpha=200)
 
 sleep(5)
-camera.capture('/home/pi/camera/image.jpg')
+camera.capture('./image.jpg')
 camera.stop_preview()

@@ -26,9 +26,7 @@ do
 		export f=0;
 	fi
 	cat $filename
-	echo $x
-	echo $f
-	echo "${frames[$x]}"
+	echo "$x:$f ${frames[$x]}"
 	export x=$(($x + 1))
 	export f=$(($f + 1))
 done

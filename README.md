@@ -3,6 +3,7 @@ Save frames from raspberry pi camera as ASCII, in time-stamped json files
 
 ## Install
 ```shell
+sudo apt install jp2a
 git clone https://github.com/SpaceHexagon/rpi-json-ascii-video
 ```
 

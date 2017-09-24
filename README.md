@@ -21,7 +21,8 @@ There is no player yet, however, the format is as follows:
     "columns": 180
   },
   "frames": [
-    "--------------...\n--------------...\n",
+    ".....'''''''''''''',,,;;cOXNNNNNNNNX0000KKXXNNNNNNNNNNNNNNNNNNNNNNN",
+    "......'''''''''''',,,;cOXNNNNNNNNNKKKKXXNNNNNNNNNNNNNNNNNNNNNNNNNNN",
   ]
 }
 ```

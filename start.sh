@@ -17,11 +17,10 @@ do
 		echo "{ \"config\": { \"columns\": 180 }, \"frames\": [" > $jsonFile;
 		while [ $f -gt -1 ];
 		do
-			echo $($x - $f);
-			echo "\"" >> $jsonFile;
+			export f=$(($f - 1));
+			echo -n "\"" >> $jsonFile;
 			cat ${frames[$(expr $x - $f)]} >> $jsonFile;
-			echo "\"," >> $jsonFile;
-			export f=$(($f - 1))
+			echo -n "\"," >> $jsonFile;
 		done	
 		echo "]}" >> $jsonFile;
 		export f=0;

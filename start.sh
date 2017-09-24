@@ -30,7 +30,8 @@ do
 			export f=$(($f - 1))
 		done	
 		echo "]}" >> $jsonFile;
-		tr -d "\n\r" < $jsonFile;
+		sed -i ':a;$!{N;s/\n/ /;ba;}' $jsonFile;
+		#tr -d "\n\r" < $jsonFile;
 		export f=0;
 		export clip=$(($clip + 1))
 		cd tape

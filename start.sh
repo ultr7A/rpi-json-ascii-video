@@ -1,7 +1,7 @@
 #/bin/bash
 export x=0
 export f=0
-export clipLength=30
+export clipLength=3
 export frameData=""
 export clip=0
 frames=("")
@@ -22,7 +22,11 @@ do
 		do
 			echo -n "\"" >> $jsonFile;
 			cat ${frames[$(expr $x - $f)]} >> $jsonFile;
-			echo -n "\"," >> $jsonFile;
+			echo -n "\"" >> $jsonFile;
+			if [ $f -gt 0 ];
+			then
+				echo -n "," >> $jsonFile
+			fi
 			export f=$(($f - 1))
 		done	
 		echo "]}" >> $jsonFile;

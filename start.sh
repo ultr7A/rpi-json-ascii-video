@@ -21,13 +21,12 @@ do
 		while [ $f -gt -1 ];
 		do
 			echo -n "\"" >> $jsonFile;
-			#wc -l < ${frames[$(expr $x - $f)]} | tr -d '\n';
-			echo -n "$(wc -l < ${frames[$(expr $x - $f)]})" >> $jsonFile;
-			#cat ${frames[$(expr $x - $f)]} >> $jsonFile;
+			cat ${frames[$(expr $x - $f)]} >> $jsonFile;
 			echo -n "\"," >> $jsonFile;
 			export f=$(($f - 1))
 		done	
 		echo "]}" >> $jsonFile;
+		tr -d "\n\r" < $jsonFile;
 		export f=0;
 		export clip=$(($clip + 1))
 		cd tape

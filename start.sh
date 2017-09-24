@@ -20,7 +20,7 @@ do
 			export f=$(($f - 1));
 			echo -n "\"" >> $jsonFile;
 			cat ${frames[$(expr $x - $f)]} >> $jsonFile;
-			echo -n "\"," >> $jsonFile;
+			echo "\"," >> $jsonFile;
 		done	
 		echo "]}" >> $jsonFile;
 		export f=0;

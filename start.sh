@@ -21,7 +21,8 @@ do
 		while [ $f -gt -1 ];
 		do
 			echo -n "\"" >> $jsonFile;
-			wc -l < ${frames[$(expr $x - $f)]} | tr -d '\n' >> $jsonFile;
+			wc -l < ${frames[$(expr $x - $f)]} | tr -d '\n';
+			cat ${frames[$(expr $x - $f)]} >> $jsonFile;
 			echo "\"," >> $jsonFile;
 			export f=$(($f - 1))
 		done	

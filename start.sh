@@ -1,7 +1,7 @@
 #/bin/bash
 export x=0
 export f=0
-export clipLength=3
+export clipLength=30
 export frameData=""
 export clip=0
 frames=("")

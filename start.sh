@@ -14,7 +14,7 @@ do
 	if [ $f -eq 30 ];
 	then
 		echo "saving json video";
-		echo "{ config: { columns: 180 }, frames: [" > $jsonFile;
+		echo "{ \"config\": { \"columns\": 180 }, \"frames\": [" > $jsonFile;
 		while [ $f -gt -1 ];
 		do
 			echo $($x - $f);

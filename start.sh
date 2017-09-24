@@ -30,7 +30,8 @@ do
 			export f=$(($f - 1))
 		done	
 		echo "]}" >> $jsonFile;
-		sed -i ':a;$!{N;s/\n/ /;ba;}' $jsonFile;
+		sed -i ':a;N;$!ba;s/\n/ /g' $jsonFile;
+		#sed -i ':a;$!{N;s/\n/ /;ba;}' $jsonFile;
 		#tr -d "\n\r" < $jsonFile;
 		export f=0;
 		export clip=$(($clip + 1))

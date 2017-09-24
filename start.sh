@@ -10,6 +10,7 @@ do
 	frames[$x]=$filename
 	export jsonFile=$filename".json";
 	jp2a --width=180 image.jpg > $filename;
+	cat $filename
 	if [ $f -eq 30 ];
 	then
 		echo "saving json video";
@@ -24,8 +25,10 @@ do
 		done	
 		echo "]}" >> $jsonFile;
 		export f=0;
+		cd tape
+		ls | grep -P "\.log$" | xargs -d "\n" rm
+		cd ../
 	fi
-	cat $filename
 	echo "$x:$f ${frames[$x]}"
 	export x=$(($x + 1))
 	export f=$(($f + 1))
